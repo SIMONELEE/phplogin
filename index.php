@@ -7,11 +7,11 @@
 <body>
 <h1>PHP Login System</h1>
 
-<form>
-	<input type="text" name="first" placeholder="First Name">
-    <input type="text" name="last" placeholder="Last Name">
-    <input type="text" name="uid" placeholder="Username">
-    <input type="password" name="pwd" placeholder="Password">
+<form action="signup.php" method="POST">
+	<input type="text" name="first" placeholder="First Name"><br>
+    <input type="text" name="last" placeholder="Last Name"><br>
+    <input type="text" name="uid" placeholder="Username"><br>
+    <input type="password" name="pwd" placeholder="Password"><br>
     <button type="submit">SIGN UP</button>
 </form>
 
