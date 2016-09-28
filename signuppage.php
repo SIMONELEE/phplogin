@@ -12,13 +12,22 @@ include 'header.php';
 
 <br><br><br>
 
-<form action="signup.php" method="POST">
-	<input type="text" name="first" placeholder="First Name"><br>
-    <input type="text" name="last" placeholder="Last Name"><br>
-    <input type="text" name="uid" placeholder="Username"><br>
-    <input type="password" name="pwd" placeholder="Password"><br>
-    <button type="submit">SIGN UP</button>
-</form>
+<?php 
+if (isset($_SESSION['id'])){
+		echo "You are already logged in!";
+		} else {
+			echo "<form action='signup.php' method='POST'>
+					<input type='text' name='first' placeholder='First Name'><br>
+					<input type='text' name='last' placeholder='Last Name'><br>
+					<input type='text' name='uid' placeholder='Username'><br>
+					<input type='password' name='pwd' placeholder='Password'><br>
+					<button type='submit'>SIGN UP</button>
+				</form>";
+			}
+
+?>
+
+
 
 
 </body>
