@@ -17,6 +17,14 @@ session_start();
     <button type="submit">LOG IN</button>
 </form>
 
+<?php /*if the session has been set, then echo the id or echo "You are not logged in".*/
+	if (isset($_SESSION['id'])){
+		echo $_SESSION['id'];
+		} else {
+			echo "You are not logged in!";
+			}
+?>
+
 <br><br><br>
 
 <form action="signup.php" method="POST">
