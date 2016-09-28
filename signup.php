@@ -1,4 +1,6 @@
-<?php 
+<?php
+session_start(); 
+
 include 'dbh.php';
 
 $first = $_POST['first'];

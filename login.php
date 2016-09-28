@@ -1,4 +1,6 @@
 <?php 
+session_start();
+
 include 'dbh.php';
 
 $uid = $_POST['uid'];
@@ -11,7 +13,9 @@ if (!$row = mysqli_fetch_assoc($result)){
 	echo "Your username or password is incorrect!";
 	}
 	else {
-		echo "You are logged in!";
+		$_SESSION['id'] = $row['id']; //This is the ID from the database
+		//Testing: echo "You are logged in!";
 		}
-
+		
+header("Location: index.php");
 ?>
