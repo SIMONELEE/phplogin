@@ -1,10 +1,8 @@
-<!doctype html>
-<html>
-<head>
-<meta charset="UTF-8">
-<title>Untitled Document</title>
-</head>
+<?php 
+session_start();
 
-<body>
-</body>
-</html>
+/*Going to end (destroy) the session when logged out*/
+session_destroy();
+
+header("Location: index.php");
+?>

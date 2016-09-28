@@ -35,5 +35,11 @@ session_start();
     <button type="submit">SIGN UP</button>
 </form>
 
+<br><br>
+
+<form action="logout.php">
+	<button>LOG OUT</button>
+</form>
+
 </body>
 </html>
