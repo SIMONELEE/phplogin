@@ -16,7 +16,7 @@ include 'header.php';
 if (isset($_SESSION['id'])){
 		echo "You are already logged in!";
 		} else {
-			echo "<form action='signup.php' method='POST'>
+			echo "<form id='signupform' action='signup.php' method='POST'>
 					<input type='text' name='first' placeholder='First Name'><br>
 					<input type='text' name='last' placeholder='Last Name'><br>
 					<input type='text' name='uid' placeholder='Username'><br>
