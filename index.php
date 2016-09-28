@@ -7,7 +7,7 @@ include 'header.php';
 	if (isset($_SESSION['id'])){
 		echo $_SESSION['id'];
 		} else {
-			echo "You are not logged in!";
+			echo "<p>You are not logged in!</p>";
 			}
 ?>
 

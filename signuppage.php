@@ -6,15 +6,15 @@ include 'header.php';
 	if (isset($_SESSION['id'])){
 		echo $_SESSION['id'];
 		} else {
-			echo "You are not logged in!";
+			echo "<p>You are not logged in. <br> Please sign up!</p>";
 			}
 ?>
 
-<br><br><br>
+<br>
 
 <?php 
 if (isset($_SESSION['id'])){
-		echo "You are already logged in!";
+		echo "<p>You are already logged in!</p>";
 		} else {
 			echo "<form id='signupform' action='signup.php' method='POST'>
 					<input type='text' name='first' placeholder='First Name'><br>
