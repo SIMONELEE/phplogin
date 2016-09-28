@@ -1,10 +1,11 @@
-<!doctype html>
-<html>
-<head>
-<meta charset="UTF-8">
-<title>Untitled Document</title>
-</head>
+<?php 
+include 'dbh.php';
 
-<body>
-</body>
-</html>
+$uid = $_POST['uid'];
+$pwd = $_POST['pwd'];
+
+$sql = "SELECT * FROM user WHERE uid='$uid' AND pwd='$pwd'";
+$result = mysqli_query($conn, $sql);
+
+header("Location: index.php");
+?>

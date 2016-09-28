@@ -7,7 +7,7 @@
 <body>
 <h1>PHP Login System</h1>
 
-<form>
+<form action="login.php" method="POST">
     <input type="text" name="uid" placeholder="Username"><br>
     <input type="password" name="pwd" placeholder="Password"><br>
     <button type="submit">LOG IN</button>
