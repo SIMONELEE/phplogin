@@ -12,12 +12,13 @@ $last = $_POST['last'];
 $uid = $_POST['uid'];
 $pwd = $_POST['pwd'];
 
+$pwdh = password_hash($pwd, PASSWORD_DEFAULT);
 $sql = 'INSERT INTO user (first, last, uid, pwd) VALUES (?,?,?,?)';
 echo $sql;
 
 require_once 'dbh.php';
 $stmt = $conn->prepare($sql); /*Prepare the parametres*/
-$stmt->bind_param('ssss', $first, $last, $uid, $pwd);
+$stmt->bind_param('ssss', $first, $last, $uid, $pwdh);
 $stmt->execute(); /*execute what is told above*/
 
 

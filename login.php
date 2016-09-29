@@ -6,7 +6,17 @@ include 'dbh.php';
 $uid = $_POST['uid'];
 $pwd = $_POST['pwd'];
 
-$sql = "SELECT * FROM user WHERE uid='$uid' AND pwd='$pwd'";
+$sql = "SELECT * FROM user WHERE uid='$uid'";
+$result = mysqli_query($conn, $sql);
+$row = $result->fetch_assoc();
+$hash_pwd = $row['pwd'];
+$hash = password_verify($pwd, $hash_pwd);
+
+/*If the $hash is false = error message*/
+if ($hash == 0) {
+		echo "Error";
+	} else {
+$sql = "SELECT * FROM user WHERE uid='$uid' AND pwd='$hash_pwd'";
 $result = mysqli_query($conn, $sql);
 
 if (!$row = mysqli_fetch_assoc($result)){
@@ -17,6 +27,5 @@ if (!$row = mysqli_fetch_assoc($result)){
 		header("Location: secret.php");	
 		//echo "You are logged in!";
 		}
-		
-
+}
 ?>
