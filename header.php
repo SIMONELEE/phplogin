@@ -28,7 +28,6 @@ session_start();
 					<button type='submit'>LOG IN</button>
 				</form>";
 				}		
-				
 			?>
             <li><a href="signuppage.php">SIGN UP</a></li>
         </ul>

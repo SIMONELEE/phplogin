@@ -13,9 +13,10 @@ if (!$row = mysqli_fetch_assoc($result)){
 	echo "<p>Your username or password is incorrect!</p>";
 	}
 	else {
-		$_SESSION['id'] = $row['id']; //This is the ID from the database
-		// echo "You are logged in!";
+		$_SESSION['id'] = $row['id'];//This is the ID from the database
+		header("Location: secret.php");	
+		//echo "You are logged in!";
 		}
 		
-header("Location: index.php");
+
 ?>
