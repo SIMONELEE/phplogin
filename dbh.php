@@ -1,7 +1,7 @@
 <?php 
-$conn = mysqli_connect("localhost", "root", "", "phplogin");
+const DB_HOST = 'simonelee.dk.mysql';
+const DB_USER = 'simonelee_dk';
+const DB_PASS = 'nYvNFMtA';
+const DB_NAME = 'simonelee_dk';
 
-if (!$conn){
-	die("Connection failed: ".mysqli_connect_error());
-	}
-?>
+$conn = mysqli_connect('simonelee.dk.mysql', 'simonelee_dk', 'nYvNFMtA', 'simonelee_dk');

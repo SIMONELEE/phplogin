@@ -9,6 +9,8 @@ $pwd = $_POST['pwd'];
 $sql = "SELECT * FROM user WHERE uid='$uid'";
 $result = mysqli_query($conn, $sql);
 $row = $result->fetch_assoc();
+
+/* Password hashing variables*/
 $hash_pwd = $row['pwd'];
 $hash = password_verify($pwd, $hash_pwd);
 
@@ -16,6 +18,8 @@ $hash = password_verify($pwd, $hash_pwd);
 if ($hash == 0) {
 		echo "Error";
 	} else {
+/* Select from the databse */
+
 $sql = "SELECT * FROM user WHERE uid='$uid' AND pwd='$hash_pwd'";
 $result = mysqli_query($conn, $sql);
 

@@ -1,8 +1,10 @@
 <?php
 session_start(); 
+
 include 'dbh.php';
 
-$first = filter_input(INPUT_POST, 'first') or header('Location: index.php');
+
+$first = filter_input(INPUT_POST, 'first') or die('HEllO!');
 $last = filter_input(INPUT_POST, 'last') or die('Missing/illegal age parameter.');
 $uid = filter_input(INPUT_POST, 'uid') or die('Missing/illegal email parameter.');
 $pwd = filter_input(INPUT_POST, 'pwd') or die('Missing/illegal name parameter.');
@@ -12,13 +14,14 @@ $last = $_POST['last'];
 $uid = $_POST['uid'];
 $pwd = $_POST['pwd'];
 
+/* Added hashing to the password*/
 $pwdh = password_hash($pwd, PASSWORD_DEFAULT);
 $sql = 'INSERT INTO user (first, last, uid, pwd) VALUES (?,?,?,?)';
-echo $sql;
+//echo $sql;
 
 require_once 'dbh.php';
 $stmt = $conn->prepare($sql); /*Prepare the parametres*/
-$stmt->bind_param('ssss', $first, $last, $uid, $pwdh);
+$stmt->bind_param('ssss', $first, $last, $uid, $pwdh); /*Bind the parameters - incl. the password hashing */
 $stmt->execute(); /*execute what is told above*/
 
 
