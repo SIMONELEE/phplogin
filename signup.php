@@ -4,10 +4,10 @@ session_start();
 include 'dbh.php';
 
 
-$first = filter_input(INPUT_POST, 'first') or die('HEllO!');
-$last = filter_input(INPUT_POST, 'last') or die('Missing/illegal age parameter.');
-$uid = filter_input(INPUT_POST, 'uid') or die('Missing/illegal email parameter.');
-$pwd = filter_input(INPUT_POST, 'pwd') or die('Missing/illegal name parameter.');
+$first = filter_input(INPUT_POST, 'first') or die('Please fill out all fields for sign up.');
+$last = filter_input(INPUT_POST, 'last') or die('Please fill out all fields for sign up.');
+$uid = filter_input(INPUT_POST, 'uid') or die('Please fill out all fields for sign up.');
+$pwd = filter_input(INPUT_POST, 'pwd') or die('Please fill out all fields for sign up.');
 
 $first = $_POST['first'];
 $last = $_POST['last'];

@@ -95,3 +95,8 @@ nav ul li a {
 	background-color: #F9CFC5;
 	}	
 	
+#image {
+	display: block;
+    margin-left: auto;
+    margin-right: auto
+	}
